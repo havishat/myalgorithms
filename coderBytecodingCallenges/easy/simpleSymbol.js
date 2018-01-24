@@ -1,0 +1,53 @@
+function SimpleSymbols(str) { 
+
+    // pad the strings so that if a character exists at the beginning
+    // of the string for example, we don't get on out-of-bounds error by
+    // trying to get the character before it
+    var str = '=' + str + '=';
+  
+    // loop through entire string
+    for (var i = 0; i < str.length; i++) {
+      
+      // check to see if current character is an alphabetic character  
+      // by using a simple case-insensitive regex pattern 
+      if (str[i].match(/[a-z]/i) !== null) {
+  
+        // check to see if a + symbol is to the left and right
+        // if not, then we know this string is not valid
+        if (str[i-1] !== '+' || str[i+1] !== '+') { 
+          return false;
+        }
+  
+      }
+   
+    }
+  
+    return true;
+    
+  }
+     
+  SimpleSymbols("+d+=3=+s+"); 
+
+
+
+ 
+ 
+  function SimpleSymbols(str) { 
+
+    // code goes here  
+    if(str.length < 2){
+      return false
+    } 
+    for(var i=0; i<str.length-1;i++){
+      if(str.charCodeAt(i) > 96 && str.charCodeAt(i) < 123){
+       if(str[i+1] != "+" || str[i-1] != "+" ) {
+         return false
+      }
+      }
+    }
+    return true; 
+           
+  }
+     
+  // keep this function call here 
+  console.log(SimpleSymbols('+d+=3=+s+'));    
