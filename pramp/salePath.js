@@ -29,6 +29,8 @@
 // [output] integer
 
 
+
+
 // Constructor to create a new Node
 class Node {
     constructor(cost) {
@@ -60,34 +62,24 @@ class Node {
   
   
   function getCheapestCost(rootNode, totalCost = 0, result = Infinity) {
-    // your code goes here
-   
-    totalCost += rootNode.cost;
-  
-       
-    if(rootNode.children.length == 0){
-      // console.log(totalCost)
-      return totalCost
-    } else {
-     
-      // var minCost =  totalCost
-  
-      for(var i=0; i<rootNode.children.length; i++){
-        // if(minCost > getCheapestCost(rootNode.children[i], totalCost, result)){
-        //     minCost = getCheapestCost(rootNode.children[i], totalCost, result)
-        // }
-        result = Math.min(result, getCheapestCost(rootNode.children[i], totalCost, result));
-      
-         
-      }
-    //   rootNode.children.forEach(child => {
-    //   result = Math.min(result, getCheapestCost(child, totalCost, result));
-    // });
-    }
-    return  result
+  // your code goes here
+  totalCost += rootNode.cost;
+  if(rootNode.children.length === 0){
+  // console.log(totalCost)
+  return totalCost
+  } else {
+  var minCost = result
+  for(var i=0; i<rootNode.children.length; i++){
+  if(minCost > getCheapestCost(rootNode.children[i], totalCost, result)){
+  minCost = getCheapestCost(rootNode.children[i], totalCost, result)
+  }
+  //result = Math.min(result, getCheapestCost(rootNode.children[i], totalCost, result));
+  }
+  // rootNode.children.forEach(child => {
+  // result = Math.min(result, getCheapestCost(child, totalCost, result));
+  // });
+  }
+  return minCost
   }
   
-  
-  console.log(getCheapestCost(node0));
-
-
+  console.log(getCheapestCost(node0))
