@@ -1,3 +1,12 @@
+// reverseVowels(word) - Given an array of characters, 
+// reverse the vowels but keep the consonants in place.
+
+// Space complexity: O(1)
+// Time complexity: O(N)
+// Example: ["w","h","i","t","e","b","o","a","r","d"] -> 
+//          ["w","h","a","t","o","b","e","i","r","d"]
+//             s                                  e
+
 function reverseVowels(word){
     var s = 0
     var e = word.length; 
