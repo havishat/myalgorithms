@@ -8,13 +8,6 @@ function QueueNode(val){
     this.tail = null;
   }
   
-  var isEmpty = function(q) {
-    if (q.head == null && q.tail == null) {
-      return true;
-    }
-    return false;
-  }
-
   var enqueue = function(q, val){
     newmember = new QueueNode(val);
     //If there are no members in the queue,
@@ -49,6 +42,13 @@ function QueueNode(val){
     }
   }
   
+  var isEmpty = function(q) {
+    if (q.head == null && q.tail == null) {
+      return true;
+    }
+    return false;
+  }
+  
   var deleteQueue = function(q){
   
     if(q.head == null){
@@ -63,25 +63,50 @@ function QueueNode(val){
       q.head = null
       q.tail = null
     }
-    // return q
+    return q
   } 
   
-  q = new Queue()
-  console.log(dequeue(q))
-  console.log(q)
-  console.log(enqueue(q, 1))
-  console.log(q)
-  console.log(enqueue(q, 2))
-  console.log(q)
-  // console.log(dequeue(q))
-  console.log(q)
-  console.log(enqueue(q, 3))
-  console.log(q)
-  console.log(enqueue(q, 4))
-  console.log(q)
-  // console.log(dequeue(q))
-  console.log(q)
-  console.log(enqueue(q, 5))
-  console.log(q)
-  console.log(deleteQueue(q))
-  console.log(q)
+  
+  function TreeNode(val){
+      this.val = val;
+      this.left = null;
+      this.right = null;
+    }
+    
+    // function BinarySearchTree(){
+    //   this.root = null;
+    // }
+  
+  var p = new TreeNode(1);
+  p.left = new TreeNode(2);
+  
+  p.right = new TreeNode(3);
+  p.left.left = new TreeNode(4);
+  p.left.right = new TreeNode(5);
+  p.right.left = new TreeNode(6);
+  p.right.right = new TreeNode(7);
+  
+  // BinarySearchTree.prototype.bsf = function(val){
+  var bsf = function(root){
+        var q = new Queue();  
+       if(root == null){
+          return;
+       }
+       enqueue(q,root)
+      
+        // console.log("hell")
+       while(isEmpty(q) == false){
+         
+         var currentNode = dequeue(q)
+         console.log(currentNode.val)
+         if(currentNode.left != null){
+           enqueue(q,currentNode.left)
+         }
+         if(currentNode.right != null){
+           enqueue(q,currentNode.right)
+         }
+       }
+      //  deleteQueue(q)
+  }
+  
+  bsf(p)
