@@ -1,21 +1,22 @@
- function maxcountDuplicate(arr){
-   var dict = {};
-   for(var i =0; i<arr.length;i++){
-     if (arr[i] in dict) {
-        dict[arr[i]]++;
-      } else {
-        dict[arr[i]] = 1;
-      }
+function Duplicate(arr){
+  var dict = {};
+  var max = 0;
+  for(var i =0; i<arr.length;i++){
+    if (arr[i] in dict) {
+       dict[arr[i]]++;
+     } else {
+       dict[arr[i]] = 1;
      }
-   var max = 0;
-   var y
+     if(dict[arr[i]] > max){
+         max = dict[arr[i]]
+     }
+    }
+   
    for(c in dict){
-     if(dict[c] > max){
-       max = dict[c]
+     if(max == dict[c]){
+       return c
      }
    }
-   return c
-   
- }
 
- console.log(Duplicate([1,9,10,2,10,4,3,10,3,1]))
+}
+console.log(Duplicate([10,10,10,10,10,10,9,3,3,2,4,3,1,3,1]))
