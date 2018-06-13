@@ -1,0 +1,31 @@
+<script>
+    function dList(){
+        // if()
+        this.head = null;
+        this.tail = null;
+        
+        // while(current){
+        //     current = current.next
+        // }
+
+}
+
+function dlNode(value){
+  this.val = value;
+  this.next = null;
+  this.prev = null;
+}
+
+dlist1 = new dList();
+node1 = new dlNode(1);
+node2 = new dlNode(2);
+node3 = new dlNode(3);
+dlist1.head = node1;
+dlist1.tail = node3;
+node1.next = node2;
+node2.next = node3;
+node2.prev = node1;
+node3.prev = node2;
+
+console.log(dlist1);
+</script>
