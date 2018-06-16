@@ -36,3 +36,37 @@ var mergeTwoLists = function(l1, l2) {
             return l2;
         }   
 };
+
+
+var mergeTwoLists = function(l1, l2) {
+    
+
+    var l3 = new ListNode(0);
+      var runner = l3
+  
+      while(l1 && l2){
+          if(l1.val < l2.val){
+              runner.next = new ListNode(l1.val)
+              runner = runner.next
+              l1 = l1.next
+          } else {
+              runner.next = new ListNode(l2.val)
+              runner = runner.next
+              l2 = l2.next 
+          }
+      }
+          
+          while(l1 || l2){
+              if(l1){
+              runner.next = new ListNode(l1.val)
+              runner = runner.next
+              l1 = l1.next
+              }else {
+              runner.next = new ListNode(l2.val)
+              runner = runner.next
+              l2 = l2.next
+              }
+          }
+  
+      return l3.next
+  };
