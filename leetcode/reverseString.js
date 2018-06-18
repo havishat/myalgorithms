@@ -16,7 +16,13 @@ var reverseString = function(s) {
   
   console.log(reverseString("hello"))
 
-
+  var reverseString = function(s) {
+    var result = "";
+    for (i=s.length-1; i >= 0; i--) {
+        result += s[i];
+    }
+    return result;
+};
 
   var reverseString = function(s) {
     var arr = []
