@@ -33,3 +33,32 @@ var maxSubArray = function(nums) {
 };
 
 console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+
+//my second solution
+// var maxSubArray = function(nums) {
+    
+//     if(nums.length < 2) {
+//         return nums[0]
+//     }
+    
+//     sum = 0
+//     max = nums[0]
+//     for(var i=0;i<nums.length;i++){
+//          if(sum<0){
+//         sum = nums[i]
+//     } else {
+//         sum +=nums[i]
+//     }
+        
+        
+//         if(max< sum){
+//         max = sum
+//         }
+    
+//     }
+    
+    
+    
+//     return max
+    
+// };
