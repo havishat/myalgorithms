@@ -32,3 +32,31 @@ return isValidBSTHelper(root.left, min, root.val) && isValidBSTHelper(root.right
 
 };
   
+
+// VALID BST     
+    //  -- Left Subtree must be BST
+    //  -- Right Subtree must be BST
+    //  -- leftnode <= root <= rightnode
+
+    //  IsValidBST(node n) { //8, 5, 3
+    //  	if n == null {
+    //  		return True
+    //  	}
+    //  	-- Left Subtree must be BST
+    //  	isLeftBST = isValidBST(n.left)
+    //  	if !isLeftBST {
+    //  		return False
+    //  	}
+    //  	-- Right Subtree must be BST
+    //  	isRightBST = isValidBST(n.right)
+    //  	if !isRightBST {
+    //  		return False
+    //  	}
+    //  	if (n.left && n.left.val > n.val) {
+    //  		return False
+    //  	}
+    //  	if(n.right && n.val > n.right.val) {
+    //  		return False
+    //  	}
+    //  	return True
+    //  }

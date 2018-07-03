@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lab 16</title>
+    <meta charset="utf-8">
+    <style>
+    </style>
+    <script type="text/javascript">
+        // Add the value of the buttons to the readonly input element
+        function add_to_input(arg) {
+            let current_value = document.forms[0].elements[0];
+            current_value.value = current_value.value + arg;
+        }
+        // Give the final output after evaluating
+        function eval_input() {
+            let final_value = document.forms[0].elements[0];
+            try{
+                final_value.value = eval(final_value.value) //evaluate the expression using the eval function
+            }
+            catch {
+                final_value.value = "Invalid Input!"
+            }
+        }
+        // Remove the last character of the string
+        function remove_one(){
+            let current_value = document.forms[0].elements[0];
+            current_value.value = current_value.value.slice(0, -1)
+        }
+        // setting up event listeners for '=' and 'C' buttons.
+        function initiate(){
+            let submit = document.getElementById("equals");
+            submit.addEventListener('click', eval_input, false);
+            let remove_char = document.getElementById("remove_char");
+            remove_char.addEventListener('click', remove_one, false);
+        }
+        // Event Listener when window(page) loads.
+        window.addEventListener('load', initiate, false);
+    </script>
+</head>
+<body>
+    <h1>MY CALCULATOR</h1>
+    <form>
+        <input type="text" READONLY/> 
+        <table>
+            <tr>
+                <td><input type="button" value="1" onclick="add_to_input(this.value)"></td>
+                <td><input type="button" value="2" onclick="add_to_input(this.value)"></td>
+                <td><input type="button" value="3" onclick="add_to_input(this.value)"></td>
+                <td><input type="button" value="+" onclick="add_to_input(this.value)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="add_to_input(this.value)"></td>
+                <td><input type="button" value="5" onclick="add_to_input(this.value)"></td>
+                <td><input type="button" value="6" onclick="add_to_input(this.value)"></td>
+                <td><input type="button" value="-" onclick="add_to_input(this.value)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="add_to_input(this.value)"></td>
+                <td><input type="button" value="8" onclick="add_to_input(this.value)"></td>
+                <td><input type="button" value="9" onclick="add_to_input(this.value)"></td>
+                <td><input type="button" value="*" onclick="add_to_input(this.value)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="C" id="remove_char"></td>
+                <td><input type="button" value="0" onclick="add_to_input(this.value)"></td>
+                <td><input type="button" value="=" id="equals"></td>
+                <td><input type="button" value="/" onclick="add_to_input(this.value)"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
