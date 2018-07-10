@@ -30,7 +30,7 @@ class LinkedList:
       runner.next = runner2
       runner2.next = temp1
       runner = temp1
-      runner2 = temp1
+      runner2 = temp2
     return head1
 
   def printList(self):
