@@ -53,3 +53,29 @@ console.log(moveZeroes([0,1,0,3,12]))
 //     console.log( nums)
 
 // };
+
+
+var moveZeroes = function(nums) {
+    
+
+    if(nums.length < 1){
+      return
+    }
+    let length = nums.length;
+    let read = 0;
+    let write = 0;
+  
+    while(read <= nums.length - 1){
+      if(nums[read] != 0){
+        nums[write] = nums[read]
+        write++
+      }
+      read++
+    }
+  
+    while(write <= nums.length-1){
+      nums[write] = 0;
+      write += 1;
+    }
+  
+  };
