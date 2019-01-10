@@ -38,6 +38,18 @@ class Solution(object):
 
         # nums.sort()
         # return nums[len(nums) // 2]
+
+        count = 0
+        m = nums[0]
+        for i in range(len(nums)):
+          if(m == nums[i]):
+            count += 1
+          else:
+            count -= 1
+            if(count < 0):
+              m = nums[i]
+              count = 0
+        return m
         
         
 
